@@ -8,6 +8,10 @@
         <servlet-name>DisplayProdukServlet</servlet-name>
         <servlet-class>com.artivisi.endy.belajar.servlet.DisplayProdukServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InsertProdukServlet</servlet-name>
+        <servlet-class>com.artivisi.endy.belajar.servlet.InsertProdukServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HaloServlet</servlet-name>
         <url-pattern>/halo</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>DisplayProdukServlet</servlet-name>
         <url-pattern>/produk/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertProdukServlet</servlet-name>
+        <url-pattern>/produk/simpan</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

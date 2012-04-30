@@ -15,6 +15,10 @@ import java.sql.SQLException;
  */
 public class InsertProduk {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        insertDataProduk("P-001", "Produk 001");
+    }
+
+    public static void insertDataProduk(String kode, String nama) throws ClassNotFoundException, SQLException {
         // 1. variabel untuk koneksi ke database
         String dbDriver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost/belajar";
@@ -30,8 +34,8 @@ public class InsertProduk {
         // 4. jalankan sql
         String sql = "insert into produk (kode, nama) values (?,?)";
         PreparedStatement ps = conn.prepareStatement(sql);
-        ps.setString(1, "P-001");
-        ps.setString(2, "Produk 001");
+        ps.setString(1, kode);
+        ps.setString(2, nama);
         ps.executeUpdate();
         
         // 5. disconnect
