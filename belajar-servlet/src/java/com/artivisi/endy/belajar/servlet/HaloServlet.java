@@ -35,12 +35,15 @@ public class HaloServlet extends HttpServlet {
             /*
              * TODO output your page here. You may use following sample code.
              */
+            
+            String nama = request.getParameter("nama");
+            
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet HaloServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet HaloServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Halo " + nama + "</h1>");
             out.println("</body>");
             out.println("</html>");
         } finally {            
