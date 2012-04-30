@@ -5,6 +5,10 @@
 package com.artivisi.endy.belajar.jdbc;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -12,6 +16,10 @@ import java.sql.*;
  */
 public class DisplayProduk {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        ambilDataProduk();
+    }
+
+    public static List<Map<String, Object>> ambilDataProduk() throws SQLException, ClassNotFoundException {
         // 1. variabel untuk koneksi ke database
         String dbDriver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost/belajar";
@@ -25,6 +33,7 @@ public class DisplayProduk {
         Connection conn = DriverManager.getConnection(url, username, password);
         
         // 4. jalankan sql
+        List<Map<String, Object>> data = new ArrayList<Map<String, Object>>();
         String sql = "select * from produk";
         PreparedStatement ps = conn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
@@ -34,9 +43,18 @@ public class DisplayProduk {
             String nama = rs.getString("nama");
             
             System.out.println("ID : "+id+", Kode : "+kode+", Nama : "+nama);
+            
+            // simpan ke variabel
+            Map<String, Object> produk = new HashMap<String, Object>();
+            produk.put("id", id);
+            produk.put("kode", kode);
+            produk.put("nama", nama);
+            data.add(produk);
         }
         
         // 5. close koneksi database
         conn.close();
+        
+        return data;
     }
 }
