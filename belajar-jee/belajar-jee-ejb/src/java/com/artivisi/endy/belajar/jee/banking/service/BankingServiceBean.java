@@ -4,6 +4,8 @@
  */
 package com.artivisi.endy.belajar.jee.banking.service;
 
+import com.artivisi.endy.belajar.jee.banking.entity.Nasabah;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
@@ -19,11 +21,23 @@ public class BankingServiceBean {
     @PersistenceContext(unitName = "belajar-jee-ejbPU")
     private EntityManager em;
 
-    public void persist(Object object) {
-        em.persist(object);
+    public void simpan(Nasabah n){
+        em.persist(n);
     }
-
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
     
+    public Nasabah cariNasabahById(Long id){
+        return em.find(Nasabah.class, id);
+    }
+    
+    public Long hitungSemuaNasabah(){
+        return (Long) em.createQuery("select count(n) from Nasabah n")
+                .getSingleResult();
+    }
+    
+    public List<Nasabah> cariSemuaNasabah(Integer start, Integer rows){
+        return em.createQuery("select n from Nasabah n order by n.nama")
+                .setFirstResult(start)
+                .setMaxResults(rows)
+                .getResultList();
+    }
 }
