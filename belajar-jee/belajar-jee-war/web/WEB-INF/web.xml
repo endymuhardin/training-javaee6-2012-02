@@ -4,9 +4,17 @@
         <servlet-name>SimpanNasabahServlet</servlet-name>
         <servlet-class>com.artivisi.endy.belajar.jee.banking.servlet.SimpanNasabahServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DaftarNasabahServlet</servlet-name>
+        <servlet-class>com.artivisi.endy.belajar.jee.banking.servlet.DaftarNasabahServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimpanNasabahServlet</servlet-name>
         <url-pattern>/servlet/nasabah/simpan</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DaftarNasabahServlet</servlet-name>
+        <url-pattern>/servlet/nasabah/list</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
