@@ -5,11 +5,14 @@
 package com.artivisi.endy.belajar.jee.banking.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -24,6 +27,27 @@ public class Nasabah implements Serializable {
     
     @Column(nullable=false)
     private String nama;
+    
+    private String email;
+    
+    @Temporal(TemporalType.DATE)
+    private Date tanggalLahir;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getTanggalLahir() {
+        return tanggalLahir;
+    }
+
+    public void setTanggalLahir(Date tanggalLahir) {
+        this.tanggalLahir = tanggalLahir;
+    }
 
     public String getNama() {
         return nama;

@@ -10,8 +10,14 @@
         
         <h:form>
             <h:panelGrid columns="2">
+                <h:outputText value="Jumlah Request"></h:outputText>
+                <h:inputText value="#{nasabahManagedBean.jumlahRequest}"></h:inputText>
+                
                 <h:outputText value="Nama"></h:outputText>
                 <h:inputText value="#{nasabahManagedBean.nasabah.nama}"></h:inputText>
+                
+                <h:outputText value="Email"></h:outputText>
+                <h:inputText value="#{nasabahManagedBean.nasabah.email}"></h:inputText>
                 
                 <h:outputText value=""></h:outputText>
                 <h:commandButton value="Simpan" action="#{nasabahManagedBean.simpan()}"></h:commandButton>

@@ -32,6 +32,14 @@ public class NasabahManagedBean {
         this.nasabah = nasabah;
     }
 
+    public Integer getJumlahRequest() {
+        return jumlahRequest;
+    }
+
+    public void setJumlahRequest(Integer jumlahRequest) {
+        this.jumlahRequest = jumlahRequest;
+    }
+
     
     
     /**
