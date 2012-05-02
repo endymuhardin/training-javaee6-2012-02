@@ -10,6 +10,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.model.ListDataModel;
 
 /**
  *
@@ -23,6 +24,8 @@ public class NasabahManagedBean {
     
     private Integer jumlahRequest = 0;
     private Nasabah nasabah = new Nasabah();
+    
+    private ListDataModel<Nasabah> dataModel = new ListDataModel<Nasabah>();
 
     public Nasabah getNasabah() {
         return nasabah;
@@ -40,7 +43,14 @@ public class NasabahManagedBean {
         this.jumlahRequest = jumlahRequest;
     }
 
+    public String edit(){
+        nasabah = dataModel.getRowData();
+        return "form?faces-redirect=true";
+    }
     
+    public String delete(){
+        return "list?faces-redirect=true";
+    }
     
     /**
      * Creates a new instance of NasabahManagedBean
@@ -48,8 +58,9 @@ public class NasabahManagedBean {
     public NasabahManagedBean() {
     }
     
-    public List<Nasabah> getDaftarNasabah(){
-        return bankingServiceBean.cariSemuaNasabah(0, 100);
+    public ListDataModel<Nasabah> getDaftarNasabah(){
+        dataModel = new ListDataModel<Nasabah>(bankingServiceBean.cariSemuaNasabah(0, 100));
+        return dataModel;
     }
     
     public String simpan(){

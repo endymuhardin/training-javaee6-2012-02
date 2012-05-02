@@ -8,16 +8,26 @@
     </h:head>
     <h:body>
         <h1>Daftar Nasabah</h1>
-        
-        <h:dataTable value="#{nasabahManagedBean.daftarNasabah}" var="n">
-        
-            <h:column>
-                <f:facet name="header">Nama Nasabah</f:facet>
-                <h:outputText value="#{n.nama}"></h:outputText>
-            </h:column>
-        
-        </h:dataTable>
-        
+        <h:form>
+            <h:dataTable value="#{nasabahManagedBean.daftarNasabah}" var="n">
+
+                <h:column>
+                    <f:facet name="header">Nama Nasabah</f:facet>
+                    <h:outputText value="#{n.nama}"></h:outputText>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <h:panelGroup>
+                        <h:commandButton value="Edit" action="#{nasabahManagedBean.edit()}"></h:commandButton>
+                        <h:commandButton value="Delete" action="#{nasabahManagedBean.delete()}"></h:commandButton>
+                    </h:panelGroup>
+                </h:column>
+
+            </h:dataTable>
+
+        </h:form>
+
     </h:body>
 </html>
 
