@@ -29,6 +29,11 @@ public class BankingServiceBean {
         }
     }
     
+    public void hapus(Nasabah n){
+        Nasabah nx = em.find(Nasabah.class, n.getId());
+        em.remove(nx);
+    }
+    
     public Nasabah cariNasabahById(Long id){
         return em.find(Nasabah.class, id);
     }

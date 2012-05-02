@@ -54,6 +54,9 @@ public class NasabahManagedBean {
     }
     
     public String delete(){
+        nasabah = dataModel.getRowData();
+        bankingServiceBean.hapus(nasabah);
+        nasabah = new Nasabah();
         return "list?faces-redirect=true";
     }
     
