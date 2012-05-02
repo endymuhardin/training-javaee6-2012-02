@@ -2,34 +2,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
         <title>Daftar Nasabah</title>
     </h:head>
     <h:body>
-        <h1>Daftar Nasabah</h1>
-        <h:form>
-            
-            <h:commandButton value="Tambah" action="#{nasabahManagedBean.tambah()}"></h:commandButton>
-            
-            <h:dataTable value="#{nasabahManagedBean.daftarNasabah}" var="n">
 
-                <h:column>
-                    <f:facet name="header">Nama Nasabah</f:facet>
-                    <h:outputText value="#{n.nama}"></h:outputText>
-                </h:column>
+        <ui:composition template="../template/template-utama.xhtml">
 
-                <h:column>
-                    <f:facet name="header">Action</f:facet>
-                    <h:panelGroup>
-                        <h:commandButton value="Edit" action="#{nasabahManagedBean.edit()}"></h:commandButton>
-                        <h:commandButton value="Delete" action="#{nasabahManagedBean.delete()}"></h:commandButton>
-                    </h:panelGroup>
-                </h:column>
+            <ui:define name="content">
+                <h1>Daftar Nasabah</h1>
+                <h:form>
 
-            </h:dataTable>
+                    <h:commandButton value="Tambah" action="#{nasabahManagedBean.tambah()}"></h:commandButton>
 
-        </h:form>
+                    <h:dataTable value="#{nasabahManagedBean.daftarNasabah}" var="n">
+
+                        <h:column>
+                            <f:facet name="header">Nama Nasabah</f:facet>
+                            <h:outputText value="#{n.nama}"></h:outputText>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Action</f:facet>
+                            <h:panelGroup>
+                                <h:commandButton value="Edit" action="#{nasabahManagedBean.edit()}"></h:commandButton>
+                                <h:commandButton value="Delete" action="#{nasabahManagedBean.delete()}"></h:commandButton>
+                            </h:panelGroup>
+                        </h:column>
+
+                    </h:dataTable>
+
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+
 
     </h:body>
 </html>
