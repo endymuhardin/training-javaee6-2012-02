@@ -43,6 +43,11 @@ public class NasabahManagedBean {
         this.jumlahRequest = jumlahRequest;
     }
 
+    public String tambah(){
+        nasabah = new Nasabah();
+        return "form?faces-redirect=true";
+    }
+    
     public String edit(){
         nasabah = dataModel.getRowData();
         return "form?faces-redirect=true";

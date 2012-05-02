@@ -22,7 +22,11 @@ public class BankingServiceBean {
     private EntityManager em;
 
     public void simpan(Nasabah n){
-        em.persist(n);
+        if(n.getId() == null) {
+            em.persist(n);
+        } else {
+            em.merge(n);
+        }
     }
     
     public Nasabah cariNasabahById(Long id){

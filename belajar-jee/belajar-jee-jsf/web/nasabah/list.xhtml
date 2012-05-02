@@ -9,6 +9,9 @@
     <h:body>
         <h1>Daftar Nasabah</h1>
         <h:form>
+            
+            <h:commandButton value="Tambah" action="#{nasabahManagedBean.tambah()}"></h:commandButton>
+            
             <h:dataTable value="#{nasabahManagedBean.daftarNasabah}" var="n">
 
                 <h:column>
