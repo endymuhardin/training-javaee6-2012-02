@@ -8,6 +8,10 @@
         <servlet-name>DaftarNasabahServlet</servlet-name>
         <servlet-class>com.artivisi.endy.belajar.jee.banking.servlet.DaftarNasabahServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>KirimJMSServlet</servlet-name>
+        <servlet-class>com.artivisi.endy.belajar.jee.banking.servlet.KirimJMSServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimpanNasabahServlet</servlet-name>
         <url-pattern>/servlet/nasabah/simpan</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>DaftarNasabahServlet</servlet-name>
         <url-pattern>/servlet/nasabah/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>KirimJMSServlet</servlet-name>
+        <url-pattern>/kirimjms</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

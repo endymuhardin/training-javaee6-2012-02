@@ -11,4 +11,9 @@
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="banking" object-type="user" pool-name="mysql_banking_rootPool"/>
+    <admin-object-resource enabled="true" jndi-name="jms/DemoQueue"  res-type="javax.jms.Queue"  res-adapter="jmsra">
+        <property name="Name" value="PhysicalQueue"/>
+    </admin-object-resource>
+    <connector-connection-pool name="jms/DemoQueueFactoryPool"  connection-definition-name="javax.jms.QueueConnectionFactory"  resource-adapter-name="jmsra"/>
+    <connector-resource enabled="true" jndi-name="jms/DemoQueueFactory" pool-name="jms/DemoQueueFactoryPool"  />
 </resources>
