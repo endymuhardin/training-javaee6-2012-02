@@ -6,6 +6,7 @@ package com.artivisi.endy.belajar.jee.banking.service;
 
 import com.artivisi.endy.belajar.jee.banking.entity.JenisTransaksi;
 import com.artivisi.endy.belajar.jee.banking.entity.Nasabah;
+import com.artivisi.endy.belajar.jee.banking.entity.Rekening;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
@@ -56,6 +57,14 @@ public class BankingServiceBean {
             em.persist(jenisTransaksi);
         } else {
             em.merge(jenisTransaksi);
+        }
+    }
+    
+    public void simpan(Rekening rekening) {
+        if(rekening.getId() == null){
+            em.persist(rekening);
+        } else {
+            em.merge(rekening);
         }
     }
 }
