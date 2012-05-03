@@ -15,11 +15,18 @@
                 <h:form>
                     <h:panelGrid columns="3">
                         <h:outputLabel for="kode" value="Kode"></h:outputLabel>
-                        <h:inputText id="kode" value="#{jenisTransaksiManagedBean.jenisTransaksi.kode}"></h:inputText>
+                        <h:inputText id="kode" 
+                                     value="#{jenisTransaksiManagedBean.jenisTransaksi.kode}"
+                                     required="true"
+                                     requiredMessage="Kode Transaksi harus diisi"></h:inputText>
+                                     
                         <h:message for="kode"></h:message>
                         
                         <h:outputLabel for="nama" value="Nama"></h:outputLabel>
-                        <h:inputText id="nama" value="#{jenisTransaksiManagedBean.jenisTransaksi.nama}"></h:inputText>
+                        <h:inputText id="nama" 
+                                     value="#{jenisTransaksiManagedBean.jenisTransaksi.nama}"
+                                     required="true"
+                                     requiredMessage="Nama Transaksi harus diisi"></h:inputText>
                         <h:message for="nama"></h:message>
                         
                         <h:outputText value=""></h:outputText>
