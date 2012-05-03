@@ -4,6 +4,7 @@
  */
 package com.artivisi.endy.belajar.jee.banking.service;
 
+import com.artivisi.endy.belajar.jee.banking.entity.JenisTransaksi;
 import com.artivisi.endy.belajar.jee.banking.entity.Nasabah;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -48,5 +49,13 @@ public class BankingServiceBean {
                 .setFirstResult(start)
                 .setMaxResults(rows)
                 .getResultList();
+    }
+
+    public void simpan(JenisTransaksi jenisTransaksi) {
+        if(jenisTransaksi.getId() == null){
+            em.persist(jenisTransaksi);
+        } else {
+            em.merge(jenisTransaksi);
+        }
     }
 }

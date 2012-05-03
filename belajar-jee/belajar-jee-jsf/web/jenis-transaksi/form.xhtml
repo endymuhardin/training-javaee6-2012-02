@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Entri Jenis Transaksi</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../template/template-utama.xhtml">
+            <ui:define name="content">
+                <h1>Entri Jenis Transaksi</h1>
+                
+                
+                <h:form>
+                    <h:panelGrid columns="3">
+                        <h:outputLabel for="kode" value="Kode"></h:outputLabel>
+                        <h:inputText id="kode" value="#{jenisTransaksiManagedBean.jenisTransaksi.kode}"></h:inputText>
+                        <h:message for="kode"></h:message>
+                        
+                        <h:outputLabel for="nama" value="Nama"></h:outputLabel>
+                        <h:inputText id="nama" value="#{jenisTransaksiManagedBean.jenisTransaksi.nama}"></h:inputText>
+                        <h:message for="nama"></h:message>
+                        
+                        <h:outputText value=""></h:outputText>
+                        <h:commandButton value="Simpan" action="#{jenisTransaksiManagedBean.simpan()}"></h:commandButton>
+                        <h:outputText value=""></h:outputText>
+                    </h:panelGrid>
+                </h:form>
+                
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
