@@ -31,7 +31,10 @@
                         
                          <h:column>
                             <f:facet name="header">Tanggal Lahir</f:facet>
-                            <h:outputText value="#{n.tanggalLahir}"></h:outputText>
+                            <h:outputText value="#{n.tanggalLahir}">
+                                <f:convertDateTime pattern="EEEE, d MMMM yyyy"
+                                                   locale="#{nasabahManagedBean.locale}"></f:convertDateTime>
+                            </h:outputText>
                         </h:column>
 
                         <h:column>

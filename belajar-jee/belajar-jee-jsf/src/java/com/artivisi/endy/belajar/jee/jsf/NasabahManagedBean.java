@@ -7,6 +7,7 @@ package com.artivisi.endy.belajar.jee.jsf;
 import com.artivisi.endy.belajar.jee.banking.entity.Nasabah;
 import com.artivisi.endy.belajar.jee.banking.service.BankingServiceBean;
 import java.util.List;
+import java.util.Locale;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -25,7 +26,17 @@ public class NasabahManagedBean {
     private Integer jumlahRequest = 0;
     private Nasabah nasabah = new Nasabah();
     
+    private Locale locale = new Locale("id", "id");
+    
     private ListDataModel<Nasabah> dataModel = new ListDataModel<Nasabah>();
+
+    public Locale getLocale() {
+        return locale;
+    }
+
+    public void setLocale(Locale locale) {
+        this.locale = locale;
+    }
 
     public Nasabah getNasabah() {
         return nasabah;
