@@ -10,16 +10,16 @@
     <h:body>
         <ui:composition template="../template/template-utama.xhtml">
             <ui:define name="content">
-                <h1>Entri Jenis Transaksi</h1>
+                <h1>Entri Rekening</h1>
                 <h:form>
                     <h:panelGrid columns="3">
                         <h:outputLabel for="nasabah" value="Pilih Nasabah"></h:outputLabel>
-                        <h:selectOneListbox id="nasabah" size="1">
+                        <h:selectOneListbox id="nasabah" size="1" value="#{rekeningManagedBean.rekening.nasabah}">
                             <f:selectItem itemLabel="Pilih Nasabah"></f:selectItem>
                             <f:selectItems value="#{nasabahManagedBean.daftarNasabah}" 
                                            var="n"
                                            itemLabel="#{n.nama}"
-                                           itemValue="#{n.id}"></f:selectItems>
+                                           itemValue="#{n}"></f:selectItems>
                         </h:selectOneListbox>
                         <h:message for="nasabah"></h:message>
                         
