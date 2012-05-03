@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="NasabahWebService">
+      <implementation-class>com.artivisi.endy.belajar.jee.soap.NasabahWebService</implementation-class>
+    </service>
+    <service name="JenisTransaksiWebService">
+      <implementation-class>com.artivisi.endy.belajar.jee.soap.JenisTransaksiWebService</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

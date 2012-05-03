@@ -67,4 +67,8 @@ public class BankingServiceBean {
             em.merge(rekening);
         }
     }
+
+    public JenisTransaksi cariJenisTransaksiById(Long id) {
+        return em.find(JenisTransaksi.class, id);
+    }
 }
